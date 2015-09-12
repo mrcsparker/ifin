@@ -11,4 +11,8 @@ func welcome() string {
 
 func main() {
 	fmt.Println(welcome())
+
+	controller := service.Controller{}
+	fmt.Println(controller.Get())
+	fmt.Println(controller.About())
 }
