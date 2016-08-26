@@ -8,16 +8,17 @@ import (
 )
 
 type Payload struct {
-	Revision               model.Revision                 `json:"revision"`
-	Controller             model.Controller               `json:"controller"`
-	About                  model.About                    `json:"about"`
-	Authorities            []string                       `json:"authorities"`
-	Banners                model.Banners                  `json:"banners"`
-	Config                 model.Config                   `json:"config"`
-	ControllerServiceTypes []model.ControllerServiceTypes `json:"controllerServiceTypes"`
-	Counters               model.Counters                 `json:"counters"`
-	Identity               string                         `json:"identity"`
-	ProcessorTypes         []model.ProcessorTypes         `json:"processorTypes"`
+	Revision               model.Revision                `json:"revision"`
+	Controller             model.Controller              `json:"controller"`
+	About                  model.About                   `json:"about"`
+	Authorities            []string                      `json:"authorities"`
+	Banners                model.Banners                 `json:"banners"`
+	Config                 model.Config                  `json:"config"`
+	ControllerServiceTypes []model.ControllerServiceType `json:"controllerServiceTypes"`
+	Counters               model.Counters                `json:"counters"`
+	Identity               string                        `json:"identity"`
+	ProcessorTypes         []model.ProcessorType         `json:"processorTypes"`
+	ReportingTaskTypes     []model.ReportingTaskType     `json:"reportingTaskTypes"`
 }
 
 type Controller struct {
@@ -74,7 +75,7 @@ func (controller *Controller) Config() model.Config {
 // PUT controller/config
 
 // GET controller/controller-service-types
-func (controller *Controller) ControllerServiceTypes() []model.ControllerServiceTypes {
+func (controller *Controller) ControllerServiceTypes() []model.ControllerServiceType {
 	return get("/controller-service-types").ControllerServiceTypes
 }
 
@@ -94,11 +95,14 @@ func (controller *Controller) Identity() string {
 // GET controller/prioritizers
 
 // GET controller/processor-types
-func (controller *Controller) ProcessorTypes() []model.ProcessorTypes {
+func (controller *Controller) ProcessorTypes() []model.ProcessorType {
 	return get("/processor-types").ProcessorTypes
 }
 
 // GET controller/reporting-task-types
+func (controller *Controller) ReportingTaskTypes() []model.ReportingTaskType {
+	return get("/reporting-task-types").ReportingTaskTypes
+}
 
 // GET controller/revision
 

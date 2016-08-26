@@ -31,4 +31,9 @@ func main() {
 	fmt.Println(p.Type)
 	fmt.Println(p.Description)
 	fmt.Println(p.Tags)
+
+	var r = controller.ReportingTaskTypes()[0]
+	fmt.Println(r.Type)
+	fmt.Println(r.Description)
+	fmt.Println(r.Tags)
 }
