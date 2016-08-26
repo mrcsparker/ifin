@@ -13,12 +13,13 @@ type Payload struct {
 	About                  model.About                   `json:"about"`
 	Authorities            []string                      `json:"authorities"`
 	Banners                model.Banners                 `json:"banners"`
-	Config                 model.Config                  `json:"config"`
-	ControllerServiceTypes []model.ControllerServiceType `json:"controllerServiceTypes"`
+	Config                 model.ControllerConfiguration `json:"config"`
+	ControllerServiceTypes []model.DocumentedType        `json:"controllerServiceTypes"`
 	Counters               model.Counters                `json:"counters"`
 	Identity               string                        `json:"identity"`
-	ProcessorTypes         []model.ProcessorType         `json:"processorTypes"`
-	ReportingTaskTypes     []model.ReportingTaskType     `json:"reportingTaskTypes"`
+	ProcessorTypes         []model.DocumentedType        `json:"processorTypes"`
+	PrioritizerTypes       []model.DocumentedType        `json:"prioritizerTypes"`
+	ReportingTaskTypes     []model.DocumentedType        `json:"reportingTaskTypes"`
 }
 
 type Controller struct {
@@ -68,14 +69,14 @@ func (controller *Controller) Banners() model.Banners {
 // GET controller/bulletin-board
 
 // GET controller/config
-func (controller *Controller) Config() model.Config {
+func (controller *Controller) Config() model.ControllerConfiguration {
 	return get("/config").Config
 }
 
 // PUT controller/config
 
 // GET controller/controller-service-types
-func (controller *Controller) ControllerServiceTypes() []model.ControllerServiceType {
+func (controller *Controller) ControllerServiceTypes() []model.DocumentedType {
 	return get("/controller-service-types").ControllerServiceTypes
 }
 
@@ -93,14 +94,17 @@ func (controller *Controller) Identity() string {
 }
 
 // GET controller/prioritizers
+func (controller *Controller) Prioritizers() []model.DocumentedType {
+	return get("/prioritizers").PrioritizerTypes
+}
 
 // GET controller/processor-types
-func (controller *Controller) ProcessorTypes() []model.ProcessorType {
+func (controller *Controller) ProcessorTypes() []model.DocumentedType {
 	return get("/processor-types").ProcessorTypes
 }
 
 // GET controller/reporting-task-types
-func (controller *Controller) ReportingTaskTypes() []model.ReportingTaskType {
+func (controller *Controller) ReportingTaskTypes() []model.DocumentedType {
 	return get("/reporting-task-types").ReportingTaskTypes
 }
 
