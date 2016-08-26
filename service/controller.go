@@ -8,12 +8,16 @@ import (
 )
 
 type Payload struct {
-	Revision    model.Revision    `json:"revision"`
-	Controller  model.Controller  `json:"controller"`
-	About       model.About       `json:"about"`
-	Authorities model.Authorities `json:"authorities"`
-	Banners     model.Banners     `json:"banners"`
-	Config      model.Config      `json:"config"`
+	Revision               model.Revision                 `json:"revision"`
+	Controller             model.Controller               `json:"controller"`
+	About                  model.About                    `json:"about"`
+	Authorities            []string                       `json:"authorities"`
+	Banners                model.Banners                  `json:"banners"`
+	Config                 model.Config                   `json:"config"`
+	ControllerServiceTypes []model.ControllerServiceTypes `json:"controllerServiceTypes"`
+	Counters               model.Counters                 `json:"counters"`
+	Identity               string                         `json:"identity"`
+	ProcessorTypes         []model.ProcessorTypes         `json:"processorTypes"`
 }
 
 type Controller struct {
@@ -51,7 +55,7 @@ func (controller *Controller) About() model.About {
 
 // GET controller/authorities
 
-func (controller *Controller) Authorities() model.Authorities {
+func (controller *Controller) Authorities() []string {
 	return get("/authorities").Authorities
 }
 
@@ -70,14 +74,29 @@ func (controller *Controller) Config() model.Config {
 // PUT controller/config
 
 // GET controller/controller-service-types
+func (controller *Controller) ControllerServiceTypes() []model.ControllerServiceTypes {
+	return get("/controller-service-types").ControllerServiceTypes
+}
 
 // GET controller/counters
+func (controller *Controller) Counters() model.Counters {
+	return get("/counters").Counters
+}
 
 // PUT controller/counters/{id}
+
+// GET/controller/identity
+
+func (controller *Controller) Identity() string {
+	return get("/identity").Identity
+}
 
 // GET controller/prioritizers
 
 // GET controller/processor-types
+func (controller *Controller) ProcessorTypes() []model.ProcessorTypes {
+	return get("/processor-types").ProcessorTypes
+}
 
 // GET controller/reporting-task-types
 
