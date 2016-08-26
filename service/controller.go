@@ -13,6 +13,7 @@ type Payload struct {
 	About       model.About       `json:"about"`
 	Authorities model.Authorities `json:"authorities"`
 	Banners     model.Banners     `json:"banners"`
+	Config      model.Config      `json:"config"`
 }
 
 type Controller struct {
@@ -62,6 +63,9 @@ func (controller *Controller) Banners() model.Banners {
 // GET controller/bulletin-board
 
 // GET controller/config
+func (controller *Controller) Config() model.Config {
+	return get("/config").Config
+}
 
 // PUT controller/config
 
@@ -70,3 +74,33 @@ func (controller *Controller) Banners() model.Banners {
 // GET controller/counters
 
 // PUT controller/counters/{id}
+
+// GET controller/prioritizers
+
+// GET controller/processor-types
+
+// GET controller/reporting-task-types
+
+// GET controller/revision
+
+// GET controller/search-results
+
+// POST controller/snippetsGets
+
+// GET controller/snippets/{id}
+
+// PUT controller/snippets/{id}
+
+// DELETE controller/snippets/{id}
+
+// GET controller/status
+
+// POST controller/templates
+
+// GET controller/templates
+
+// GET controller/templates/{id}
+
+// DELETE controller/templates/{id}
+
+// GET system-diagnostics

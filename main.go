@@ -15,4 +15,6 @@ func main() {
 	controller := service.Controller{}
 	fmt.Println(controller.Get())
 	fmt.Println(controller.About())
+	fmt.Println(controller.Banners())
+	fmt.Println(controller.Config())
 }

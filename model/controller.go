@@ -15,6 +15,6 @@ type Controller struct {
 	RemoteSiteListeningPort int    `json:"remoteSiteListeningPort"`
 	SiteToSiteSecure        bool   `json:"siteToSiteSecure"`
 	InstanceId              string `json:"instanceId"`
-	InputPorts 		[]Port `json:"inputPorts"`
-    	OutputPorts 		[]Port `json:"outputPorts"`
+	InputPorts              []Port `json:"inputPorts"`
+	OutputPorts             []Port `json:"outputPorts"`
 }
