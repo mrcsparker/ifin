@@ -1,13 +1,13 @@
 package model
 
 type FlowSnippet struct {
-	// processGroups	Set	optional	The process groups in this flow snippet.
-	// remoteProcessGroups	array[RemoteProcessGroupDTO]	optional	The remote process groups in this flow snippet.
-	// processors	array[ProcessorDTO]	optional	The processors in this flow snippet.
-	// inputPorts	array[PortDTO]	optional	The input ports in this flow snippet.
-	// outputPorts	array[PortDTO]	optional	The output ports in this flow snippet.
-	// connections	array[ConnectionDTO]	optional	The connections in this flow snippet.
-	// labels	array[LabelDTO]	optional	The labels in this flow snippet.
-	// funnels	array[FunnelDTO]	optional	The funnels in this flow snippet.
-	// controllerServices	array[ControllerServiceDTO]	optional	The controller services in this flow snippet.
+	ProcessGroups       Set                  `json:"processGroups"`       // The process groups in this flow snippet.
+	RemoteProcessGroups []RemoteProcessGroup `json:"remoteProcessGroups"` //The remote process groups in this flow snippet.
+	Processors          []Processor          `json:"processors"`          // The processors in this flow snippet.
+	InputPorts          []Port               `json:"inputPorts"`          // The input ports in this flow snippet.
+	OutputPorts         []Port               `json:"outputPorts"`         // The output ports in this flow snippet.
+	Connections         []Connection         `json:"connections"`         // The connections in this flow snippet.
+	Labels              []Label              `json:"labels"`              // The labels in this flow snippet.
+	Funnels             []Funnel             `json:"funnels"`             // The funnels in this flow snippet.
+	ControllerServices  []ControllerService  `json:"controllerServices"`  // The controller services in this flow snippet.
 }
