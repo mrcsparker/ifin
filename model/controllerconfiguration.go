@@ -10,5 +10,5 @@ type ControllerConfiguration struct {
 	CurrentTime                string `json:"currentTime"`                // The current time on the system.
 	TimeOffset                 int32  `json:"timeOffset"`                 // The time offset of the system.
 	ContentViewerUrl           string `json:"contentViewerUrl"`           // The URL for the content viewer if configured.
-	URI                        string `json:"uri"`                        // The URI for the NiFi.
+	Uri                        string `json:"uri"`                        // The URI for the NiFi.
 }
