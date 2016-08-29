@@ -2,7 +2,7 @@ package model
 
 type SearchResult struct {
 	ProcessorResults          []ComponentSearchResult `json:"processorResults"`          // The processors that matched the search.
-	connectionResults         []ComponentSearchResult `json:"connectionResults"`         // The connections that matched the search.
+	ConnectionResults         []ComponentSearchResult `json:"connectionResults"`         // The connections that matched the search.
 	ProcessGroupResults       []ComponentSearchResult `json:"processGroupResults"`       // The process groups that matched the search.
 	InputPortResults          []ComponentSearchResult `json:"inputPortResults"`          // The input ports that matched the search.
 	OutputPortResults         []ComponentSearchResult `json:"outputPortResults"`         // The output ports that matched the search.
