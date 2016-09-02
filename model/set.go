@@ -1,5 +1,5 @@
 package model
 
 type Set struct {
-	Empty bool `json:"empty"`
+	Empty bool `json:"empty"` //
 }
