@@ -19,21 +19,27 @@ func main() {
 	fmt.Println(controller.Banners())
 	fmt.Println(controller.Config())
 
-	var c = controller.ControllerServiceTypes()[0]
-	fmt.Println(c.Type)
-	fmt.Println(c.Description)
-	fmt.Println(c.Tags)
+	var c = controller.ControllerServiceTypes()
+	if len(c) > 0 {
+		fmt.Println(c[0].Type)
+		fmt.Println(c[0].Description)
+		fmt.Println(c[0].Tags)
+	}
 
 	fmt.Println(controller.Counters())
 	fmt.Println(controller.Identity())
 
-	var p = controller.ProcessorTypes()[0]
-	fmt.Println(p.Type)
-	fmt.Println(p.Description)
-	fmt.Println(p.Tags)
+	var p = controller.ProcessorTypes()
+	if len(p) > 0 {
+		fmt.Println(p[0].Type)
+		fmt.Println(p[0].Description)
+		fmt.Println(p[0].Tags)
+	}
 
-	var r = controller.ReportingTaskTypes()[0]
-	fmt.Println(r.Type)
-	fmt.Println(r.Description)
-	fmt.Println(r.Tags)
+	var r = controller.ReportingTaskTypes()
+	if len(r) > 0 {
+		fmt.Println(r[0].Type)
+		fmt.Println(r[0].Description)
+		fmt.Println(r[0].Tags)
+	}
 }
