@@ -7,5 +7,5 @@ type LabelDTO struct {
 	Label         string        `json:"label"`         // The text that appears in the label.
 	Width         float64       `json:"width"`         // The width of the label in pixels when at a 1:1 scale.
 	Height        float64       `json:"height"`        // The height of the label in pixels when at a 1:1 scale.
-
+	Style         string        `json:"style"`         // The styles for this label (font-size => 12px, background-color => #eee, etc).
 }

@@ -6,5 +6,5 @@ type UserGroupDTO struct {
 	Position       []PositionDTO        `json:"position"`       // The position of this component in the UI if applicable.
 	Identity       string               `json:"identity"`       // The identity of the tenant.
 	Users          []TenantEntity       `json:"users"`          // The users that belong to the user group.
-	AccessPolicies []AccessPolicyEntity `json:"accessPolicies"` // The access policies this user group belongs to.
+	AccessPolicies []AccessPolicyEntity `json:"accessPolicies"` // The access policies this user group belongs to. *Read Only*
 }

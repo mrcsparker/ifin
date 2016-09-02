@@ -1,5 +1,5 @@
 package model
 
 type PeersEntity struct {
-	Peers []PeerDTO `json:"peers"` //
+	Peers []PeerDTO `json:"peers"`
 }

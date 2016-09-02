@@ -1,5 +1,5 @@
 package model
 
 type PrioritizerTypesEntity struct {
-	PrioritizerTypes []DocumentedTypeDTO `json:"prioritizerTypes"` //
+	PrioritizerTypes []DocumentedTypeDTO `json:"prioritizerTypes"`
 }

@@ -1,5 +1,5 @@
 package model
 
 type NodeEntity struct {
-	Node []NodeDTO `json:"node"` //
+	Node []NodeDTO `json:"node"`
 }

@@ -1,5 +1,5 @@
 package model
 
 type ProvenanceEntity struct {
-	Provenance []ProvenanceDTO `json:"provenance"` //
+	Provenance []ProvenanceDTO `json:"provenance"`
 }

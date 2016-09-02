@@ -1,5 +1,5 @@
 package model
 
 type AboutEntity struct {
-	About []AboutDTO `json:"about"` //
+	About []AboutDTO `json:"about"`
 }

@@ -1,5 +1,5 @@
 package model
 
 type FunnelsEntity struct {
-	Funnels []FunnelEntity `json:"funnels"` //
+	Funnels []FunnelEntity `json:"funnels"`
 }

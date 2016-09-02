@@ -1,5 +1,5 @@
 package model
 
 type InputPortsEntity struct {
-	InputPorts []PortEntity `json:"inputPorts"` //
+	InputPorts []PortEntity `json:"inputPorts"`
 }

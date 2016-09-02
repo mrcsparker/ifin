@@ -1,5 +1,5 @@
 package model
 
 type AccessStatusEntity struct {
-	AccessStatus []AccessStatusDTO `json:"accessStatus"` //
+	AccessStatus []AccessStatusDTO `json:"accessStatus"`
 }

@@ -1,5 +1,5 @@
 package model
 
 type ControllerServiceReferencingComponentsEntity struct {
-	ControllerServiceReferencingComponents []ControllerServiceReferencingComponentEntity `json:"controllerServiceReferencingComponents"` //
+	ControllerServiceReferencingComponents []ControllerServiceReferencingComponentEntity `json:"controllerServiceReferencingComponents"`
 }

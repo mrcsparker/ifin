@@ -1,5 +1,5 @@
 package model
 
 type PropertyDescriptorEntity struct {
-	PropertyDescriptor []PropertyDescriptorDTO `json:"propertyDescriptor"` //
+	PropertyDescriptor []PropertyDescriptorDTO `json:"propertyDescriptor"`
 }

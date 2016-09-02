@@ -1,5 +1,5 @@
 package model
 
 type ControllerServiceTypesEntity struct {
-	ControllerServiceTypes []DocumentedTypeDTO `json:"controllerServiceTypes"` //
+	ControllerServiceTypes []DocumentedTypeDTO `json:"controllerServiceTypes"`
 }

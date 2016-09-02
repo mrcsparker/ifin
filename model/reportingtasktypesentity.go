@@ -1,5 +1,5 @@
 package model
 
 type ReportingTaskTypesEntity struct {
-	ReportingTaskTypes []DocumentedTypeDTO `json:"reportingTaskTypes"` //
+	ReportingTaskTypes []DocumentedTypeDTO `json:"reportingTaskTypes"`
 }

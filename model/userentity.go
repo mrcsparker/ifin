@@ -7,5 +7,5 @@ type UserEntity struct {
 	Position    []PositionDTO    `json:"position"`    // The position of this component in the UI if applicable.
 	Permissions []PermissionsDTO `json:"permissions"` // The permissions for this component.
 	Bulletins   []BulletinEntity `json:"bulletins"`   // The bulletins for this component.
-	Component   []UserDTO        `json:"component"`   //
+	Component   []UserDTO        `json:"component"`
 }

@@ -1,5 +1,5 @@
 package model
 
 type ClusterSearchResultsEntity struct {
-	NodeResults []NodeSearchResultDTO `json:"nodeResults"` //
+	NodeResults []NodeSearchResultDTO `json:"nodeResults"`
 }

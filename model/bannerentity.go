@@ -1,5 +1,5 @@
 package model
 
 type BannerEntity struct {
-	Banners []BannerDTO `json:"banners"` //
+	Banners []BannerDTO `json:"banners"`
 }

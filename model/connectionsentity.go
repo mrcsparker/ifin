@@ -1,5 +1,5 @@
 package model
 
 type ConnectionsEntity struct {
-	Connections []ConnectionEntity `json:"connections"` //
+	Connections []ConnectionEntity `json:"connections"`
 }

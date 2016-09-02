@@ -7,7 +7,7 @@ type PortEntity struct {
 	Position    []PositionDTO    `json:"position"`    // The position of this component in the UI if applicable.
 	Permissions []PermissionsDTO `json:"permissions"` // The permissions for this component.
 	Bulletins   []BulletinEntity `json:"bulletins"`   // The bulletins for this component.
-	Component   []PortDTO        `json:"component"`   //
-	Status      []PortStatusDTO  `json:"status"`      // The status of the port.
-	PortType    string           `json:"portType"`    //
+	Component   []PortDTO        `json:"component"`
+	Status      []PortStatusDTO  `json:"status"` // The status of the port.
+	PortType    string           `json:"portType"`
 }
