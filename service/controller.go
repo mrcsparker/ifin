@@ -1,33 +1,18 @@
 package service
 
+/*
 import (
 	"fmt"
 	"github.com/mrcsparker/ifin/api"
 	"github.com/mrcsparker/ifin/model"
 	"log"
 )
+*/
 
-type Payload struct {
-	Revision               model.Revision                `json:"revision"`
-	Controller             model.Controller              `json:"controller"`
-	About                  model.About                   `json:"about"`
-	Authorities            []string                      `json:"authorities"`
-	Banners                model.Banners                 `json:"banners"`
-	Config                 model.ControllerConfiguration `json:"config"`
-	ControllerServiceTypes []model.DocumentedType        `json:"controllerServiceTypes"`
-	Counters               model.Counters                `json:"counters"`
-	Identity               string                        `json:"identity"`
-	ProcessorTypes         []model.DocumentedType        `json:"processorTypes"`
-	PrioritizerTypes       []model.DocumentedType        `json:"prioritizerTypes"`
-	ReportingTaskTypes     []model.DocumentedType        `json:"reportingTaskTypes"`
-}
-
-type Controller struct {
-}
-
-func get(geturl string) Payload {
+/*
+func get(geturl string) model.ControllerDTO {
 	s := api.Setup()
-	res := Payload{}
+	res := model.ControllerDTO{}
 	url := "http://localhost:8080/nifi-api/controller" + geturl
 	resp, err := s.Get(url, nil, &res, nil)
 	if err != nil {
@@ -40,14 +25,16 @@ func get(geturl string) Payload {
 
 	return res
 }
+*/
 
 // Ugly for now.  Will refactor when I get all the services in
 
 // GET controller
-func (controller *Controller) Get() model.Controller {
-	return get("").Controller
-}
+//func (self *model.ControllerDTO) Get() model.ControllerDTO {
+//	return get("")
+//}
 
+/*
 // GET controller/about
 func (controller *Controller) About() model.About {
 	return get("/about").About
@@ -107,6 +94,8 @@ func (controller *Controller) ProcessorTypes() []model.DocumentedType {
 func (controller *Controller) ReportingTaskTypes() []model.DocumentedType {
 	return get("/reporting-task-types").ReportingTaskTypes
 }
+
+*/
 
 // GET controller/revision
 
