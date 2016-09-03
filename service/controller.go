@@ -1,19 +1,28 @@
 package service
 
-/*
 import (
 	"fmt"
 	"github.com/mrcsparker/ifin/api"
 	"github.com/mrcsparker/ifin/model"
 	"log"
 )
-*/
 
-/*
-func get(geturl string) model.ControllerDTO {
+type Controller struct {
+}
+
+/**
+ * Gets the contents of the cluster
+ *
+ * Returns the contents of the cluster including all nodes and their status.
+ *
+ * Tags: ["controller"]
+ *
+ * @return model.ClusterEntity
+ */
+func (self Controller) GetCluster() model.ClusterEntity {
 	s := api.Setup()
-	res := model.ControllerDTO{}
-	url := "http://localhost:8080/nifi-api/controller" + geturl
+	res := model.ClusterEntity{}
+	url := "http://localhost:8080/nifi-api/controller/cluster"
 	resp, err := s.Get(url, nil, &res, nil)
 	if err != nil {
 		log.Fatal(err)
@@ -25,98 +34,203 @@ func get(geturl string) model.ControllerDTO {
 
 	return res
 }
-*/
 
-// Ugly for now.  Will refactor when I get all the services in
+/**
+ * Gets a node in the cluster
+ *
+ *
+ * Tags: ["controller"]
+ *
+ * @param id The node id.
+ * @return model.NodeEntity
+ */
+func (self Controller) GetNode(id string) model.NodeEntity {
+	s := api.Setup()
+	res := model.NodeEntity{}
+	url := "http://localhost:8080/nifi-api/controller/cluster/nodes/{id}"
+	resp, err := s.Get(url, nil, &res, nil)
+	if err != nil {
+		log.Fatal(err)
+	}
 
-// GET controller
-//func (self *model.ControllerDTO) Get() model.ControllerDTO {
-//	return get("")
-//}
+	if resp.Status() != 200 {
+		fmt.Println(res)
+	}
 
-/*
-// GET controller/about
-func (controller *Controller) About() model.About {
-	return get("/about").About
+	return res
 }
 
-// POST controller/archive
+/**
+ * Updates a node in the cluster
+ *
+ *
+ * Tags: ["controller"]
+ *
+ * @param id The node id.
+ * @param body The node configuration. The only configuration that will be honored at this endpoint is the status or primary flag.
+ * @return model.NodeEntity
+ */
+func (self Controller) UpdateNode(id string, body model.NodeEntity) model.NodeEntity {
+	s := api.Setup()
+	res := model.NodeEntity{}
+	url := "http://localhost:8080/nifi-api/controller/cluster/nodes/{id}"
+	resp, err := s.Put(url, nil, &res, nil)
+	if err != nil {
+		log.Fatal(err)
+	}
 
-// GET controller/authorities
+	if resp.Status() != 200 {
+		fmt.Println(res)
+	}
 
-func (controller *Controller) Authorities() []string {
-	return get("/authorities").Authorities
+	return res
 }
 
-// GET controller/banners
-func (controller *Controller) Banners() model.Banners {
-	return get("/banners").Banners
+/**
+ * Removes a node from the cluster
+ *
+ *
+ * Tags: ["controller"]
+ *
+ * @param id The node id.
+ * @return model.NodeEntity
+ */
+func (self Controller) DeleteNode(id string) model.NodeEntity {
+	s := api.Setup()
+	res := model.NodeEntity{}
+	url := "http://localhost:8080/nifi-api/controller/cluster/nodes/{id}"
+	resp, err := s.Delete(url, nil, &res, nil)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	if resp.Status() != 200 {
+		fmt.Println(res)
+	}
+
+	return res
 }
 
-// GET controller/bulletin-board
+/**
+ * Retrieves the configuration for this NiFi Controller
+ *
+ *
+ * Tags: ["controller"]
+ *
+ * @return model.ControllerConfigurationEntity
+ */
+func (self Controller) GetControllerConfig() model.ControllerConfigurationEntity {
+	s := api.Setup()
+	res := model.ControllerConfigurationEntity{}
+	url := "http://localhost:8080/nifi-api/controller/config"
+	resp, err := s.Get(url, nil, &res, nil)
+	if err != nil {
+		log.Fatal(err)
+	}
 
-// GET controller/config
-func (controller *Controller) Config() model.ControllerConfiguration {
-	return get("/config").Config
+	if resp.Status() != 200 {
+		fmt.Println(res)
+	}
+
+	return res
 }
 
-// PUT controller/config
+/**
+ * Retrieves the configuration for this NiFi
+ *
+ *
+ * Tags: ["controller"]
+ *
+ * @param body The controller configuration.
+ * @return model.ControllerConfigurationEntity
+ */
+func (self Controller) UpdateControllerConfig(body model.ControllerConfigurationEntity) model.ControllerConfigurationEntity {
+	s := api.Setup()
+	res := model.ControllerConfigurationEntity{}
+	url := "http://localhost:8080/nifi-api/controller/config"
+	resp, err := s.Put(url, nil, &res, nil)
+	if err != nil {
+		log.Fatal(err)
+	}
 
-// GET controller/controller-service-types
-func (controller *Controller) ControllerServiceTypes() []model.DocumentedType {
-	return get("/controller-service-types").ControllerServiceTypes
+	if resp.Status() != 200 {
+		fmt.Println(res)
+	}
+
+	return res
 }
 
-// GET controller/counters
-func (controller *Controller) Counters() model.Counters {
-	return get("/counters").Counters
+/**
+ * Creates a new controller service
+ *
+ *
+ * Tags: ["controller"]
+ *
+ * @param body The controller service configuration details.
+ * @return model.ControllerServiceEntity
+ */
+func (self Controller) CreateControllerService(body model.ControllerServiceEntity) model.ControllerServiceEntity {
+	s := api.Setup()
+	res := model.ControllerServiceEntity{}
+	url := "http://localhost:8080/nifi-api/controller/controller-services"
+	resp, err := s.Post(url, nil, &res, nil)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	if resp.Status() != 200 {
+		fmt.Println(res)
+	}
+
+	return res
 }
 
-// PUT controller/counters/{id}
+/**
+ * Purges history
+ *
+ *
+ * Tags: ["controller"]
+ *
+ * @param endDate Purge actions before this date/time.
+ * @return model.HistoryEntity
+ */
+func (self Controller) DeleteHistory(endDate string) model.HistoryEntity {
+	s := api.Setup()
+	res := model.HistoryEntity{}
+	url := "http://localhost:8080/nifi-api/controller/history"
+	resp, err := s.Delete(url, nil, &res, nil)
+	if err != nil {
+		log.Fatal(err)
+	}
 
-// GET/controller/identity
+	if resp.Status() != 200 {
+		fmt.Println(res)
+	}
 
-func (controller *Controller) Identity() string {
-	return get("/identity").Identity
+	return res
 }
 
-// GET controller/prioritizers
-func (controller *Controller) Prioritizers() []model.DocumentedType {
-	return get("/prioritizers").PrioritizerTypes
+/**
+ * Creates a new reporting task
+ *
+ *
+ * Tags: ["controller"]
+ *
+ * @param body The reporting task configuration details.
+ * @return model.ReportingTaskEntity
+ */
+func (self Controller) CreateReportingTask(body model.ReportingTaskEntity) model.ReportingTaskEntity {
+	s := api.Setup()
+	res := model.ReportingTaskEntity{}
+	url := "http://localhost:8080/nifi-api/controller/reporting-tasks"
+	resp, err := s.Post(url, nil, &res, nil)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	if resp.Status() != 200 {
+		fmt.Println(res)
+	}
+
+	return res
 }
-
-// GET controller/processor-types
-func (controller *Controller) ProcessorTypes() []model.DocumentedType {
-	return get("/processor-types").ProcessorTypes
-}
-
-// GET controller/reporting-task-types
-func (controller *Controller) ReportingTaskTypes() []model.DocumentedType {
-	return get("/reporting-task-types").ReportingTaskTypes
-}
-
-*/
-
-// GET controller/revision
-
-// GET controller/search-results
-
-// POST controller/snippetsGets
-
-// GET controller/snippets/{id}
-
-// PUT controller/snippets/{id}
-
-// DELETE controller/snippets/{id}
-
-// GET controller/status
-
-// POST controller/templates
-
-// GET controller/templates
-
-// GET controller/templates/{id}
-
-// DELETE controller/templates/{id}
-
-// GET system-diagnostics

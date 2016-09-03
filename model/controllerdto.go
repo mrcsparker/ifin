@@ -1,11 +1,5 @@
 package model
 
-import (
-	"fmt"
-	"github.com/mrcsparker/ifin/api"
-	"log"
-)
-
 type ControllerDTO struct {
 	Id                          string    `json:"id"`                          // The id of the NiFi.
 	Name                        string    `json:"name"`                        // The name of the NiFi.
@@ -24,24 +18,4 @@ type ControllerDTO struct {
 	InstanceId                  string    `json:"instanceId"`                  // If clustered, the id of the Cluster Manager, otherwise the id of the NiFi.
 	InputPorts                  []PortDTO `json:"inputPorts"`                  // The input ports available to send data to for the NiFi.
 	OutputPorts                 []PortDTO `json:"outputPorts"`                 // The output ports available to received data from the NiFi.
-}
-
-func get(geturl string) ControllerDTO {
-	s := api.Setup()
-	res := ControllerDTO{}
-	url := "http://localhost:8080/nifi-api/controller" + geturl
-	resp, err := s.Get(url, nil, &res, nil)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	if resp.Status() != 200 {
-		fmt.Println(res)
-	}
-
-	return res
-}
-
-func (self *ControllerDTO) Get() ControllerDTO {
-	return get("")
 }

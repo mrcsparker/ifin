@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/mrcsparker/ifin/model"
+	"github.com/mrcsparker/ifin/service"
 )
 
 func welcome() string {
@@ -12,8 +12,8 @@ func welcome() string {
 func main() {
 	fmt.Println(welcome())
 
-	controller := model.ControllerDTO{}
-	fmt.Println(controller.Get())
+	controller := service.Flow{}
+	fmt.Println(controller.GetAboutInfo())
 	//fmt.Println(controller.About())
 	//fmt.Println(controller.Authorities())
 	//fmt.Println(controller.Banners())
