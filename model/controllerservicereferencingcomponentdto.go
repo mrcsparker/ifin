@@ -10,7 +10,7 @@ type ControllerServiceReferencingComponentDTO struct {
 	Descriptors           PropertyDescriptorDTO `json:"descriptors"`           // The descriptors for the componet properties.
 	ValidationErrors      []string              `json:"validationErrors"`      // The validation errors for the component.
 	ReferenceType         string                `json:"referenceType"`         // The type of reference this is.
-	ActiveThreadCount     int                   `json:"activeThreadCount"`     // The number of active threads for the referencing component.
+	ActiveThreadCount     int32                 `json:"activeThreadCount"`     // The number of active threads for the referencing component.
 	ReferenceCycle        bool                  `json:"referenceCycle"`        // If the referencing component represents a controller service, this indicates whether it has already been represented in this hierarchy.
-	ReferencingComponents []Set                 `json:"referencingComponents"` // If the referencing component represents a controller service, these are the components that referenc it.
+	ReferencingComponents Set                   `json:"referencingComponents"` // If the referencing component represents a controller service, these are the components that referenc it.
 }

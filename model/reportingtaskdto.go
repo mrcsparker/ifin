@@ -3,7 +3,7 @@ package model
 type ReportingTaskDTO struct {
 	Id                      string                `json:"id"`                      // The id of the component.
 	ParentGroupId           string                `json:"parentGroupId"`           // The id of parent process group of this component if applicable.
-	Position                []PositionDTO         `json:"position"`                // The position of this component in the UI if applicable.
+	Position                PositionDTO           `json:"position"`                // The position of this component in the UI if applicable.
 	Name                    string                `json:"name"`                    // The name of the reporting task.
 	Type                    string                `json:"type"`                    // The fully qualified type of the reporting task.
 	State                   string                `json:"state"`                   // The state of the reporting task.
@@ -17,5 +17,5 @@ type ReportingTaskDTO struct {
 	CustomUiUrl             string                `json:"customUiUrl"`             // The URL for the custom configuration UI for the reporting task.
 	AnnotationData          string                `json:"annotationData"`          // The anntation data for the repoting task. This is how the custom UI relays configuration to the reporting task.
 	ValidationErrors        []string              `json:"validationErrors"`        // Gets the validation errors from the reporting task. These validation errors represent the problems with the reporting task that must be resolved before it can be scheduled to run.
-	ActiveThreadCount       int                   `json:"activeThreadCount"`       // The number of active threads for the reporting task.
+	ActiveThreadCount       int32                 `json:"activeThreadCount"`       // The number of active threads for the reporting task.
 }

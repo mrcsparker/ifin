@@ -8,6 +8,6 @@ type ProvenanceNodeDTO struct {
 	ClusterNodeIdentifier string   `json:"clusterNodeIdentifier"` // The identifier of the node that this event/flowfile originated from.
 	Type                  string   `json:"type"`                  // The type of the node.
 	EventType             string   `json:"eventType"`             // If the type is EVENT, this is the type of event.
-	Millis                int      `json:"millis"`                // The timestamp of the node in milliseconds.
+	Millis                int64    `json:"millis"`                // The timestamp of the node in milliseconds.
 	Timestamp             string   `json:"timestamp"`             // The timestamp of the node formatted.
 }

@@ -9,6 +9,6 @@ type ConnectionStatusDTO struct {
 	SourceName         string                            `json:"sourceName"`         // The name of the source component
 	DestinationId      string                            `json:"destinationId"`      // The ID of the destination component
 	DestinationName    string                            `json:"destinationName"`    // The name of the destination component
-	AggregateSnapshot  []ConnectionStatusSnapshotDTO     `json:"aggregateSnapshot"`  // The status snapshot that represents the aggregate stats of the cluster
+	AggregateSnapshot  ConnectionStatusSnapshotDTO       `json:"aggregateSnapshot"`  // The status snapshot that represents the aggregate stats of the cluster
 	NodeSnapshots      []NodeConnectionStatusSnapshotDTO `json:"nodeSnapshots"`      // A list of status snapshots for each node
 }

@@ -1,5 +1,6 @@
 package model
 
+// attribute: bulletinBoardEntity
 type BulletinBoardEntity struct {
-	BulletinBoard []BulletinBoardDTO `json:"bulletinBoard"`
+	BulletinBoard BulletinBoardDTO `json:"bulletinBoard"`
 }

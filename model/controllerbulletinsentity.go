@@ -1,5 +1,6 @@
 package model
 
+// attribute: controllerConfigurationEntity
 type ControllerBulletinsEntity struct {
 	Bulletins                  []BulletinEntity `json:"bulletins"`                  // System level bulletins to be reported to the user.
 	ControllerServiceBulletins []BulletinEntity `json:"controllerServiceBulletins"` // Controller service bulletins to be reported to the user.

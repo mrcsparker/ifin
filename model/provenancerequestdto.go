@@ -7,5 +7,5 @@ type ProvenanceRequestDTO struct {
 	EndDate         string `json:"endDate"`         // The latest event time to include in the query.
 	MinimumFileSize string `json:"minimumFileSize"` // The minimum file size to include in the query.
 	MaximumFileSize string `json:"maximumFileSize"` // The maximum file size to include in the query.
-	MaxResults      int    `json:"maxResults"`      // The maximum number of results to include.
+	MaxResults      int32  `json:"maxResults"`      // The maximum number of results to include.
 }

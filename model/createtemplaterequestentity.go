@@ -1,5 +1,6 @@
 package model
 
+// attribute: copySnippetRequestEntity
 type CreateTemplateRequestEntity struct {
 	Name        string `json:"name"`        // The name of the template.
 	Description string `json:"description"` // The description of the template.

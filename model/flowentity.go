@@ -1,5 +1,6 @@
 package model
 
+// attribute: flowEntity
 type FlowEntity struct {
-	Flow []FlowDTO `json:"flow"`
+	Flow FlowDTO `json:"flow"`
 }

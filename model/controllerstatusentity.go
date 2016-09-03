@@ -1,5 +1,6 @@
 package model
 
+// attribute: controllerStatusEntity
 type ControllerStatusEntity struct {
-	ControllerStatus []ControllerStatusDTO `json:"controllerStatus"`
+	ControllerStatus ControllerStatusDTO `json:"controllerStatus"`
 }

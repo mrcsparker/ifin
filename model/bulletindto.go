@@ -1,7 +1,7 @@
 package model
 
 type BulletinDTO struct {
-	Id          int    `json:"id"`          // The id of the bulletin.
+	Id          int64  `json:"id"`          // The id of the bulletin.
 	NodeAddress string `json:"nodeAddress"` // If clustered, the address of the node from which the bulletin originated.
 	Category    string `json:"category"`    // The catagory of this bulletin.
 	GroupId     string `json:"groupId"`     // The group id of the source component.

@@ -5,5 +5,5 @@ type AboutDTO struct {
 	Version          string `json:"version"`          // The version of this NiFi.
 	Uri              string `json:"uri"`              // The URI for the NiFi.
 	ContentViewerUrl string `json:"contentViewerUrl"` // The URL for the content viewer if configured.
-	Timezone         string `json:"timezone"`         // The timezone of the NiFi instance. *Read Only*
+	Timezone         string `json:"timezone"`         // [Read Only] The timezone of the NiFi instance.
 }
